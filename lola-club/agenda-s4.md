@@ -23,6 +23,7 @@ Instantiation
 #### Discuss the results (10 mins)
 1. What patterns are visible from the colors and links only?
 1. What parts of the code warrant more attention based on the colors?
+1. What strategy did you use to identify the different types of element?
 
 ### Content
 
@@ -34,10 +35,10 @@ Discuss in the group:
 
 - lines covered by many people?
 - lines named but not by a lot of people
+- What strategy did you use to identify importance?
 - Agree less than 10 of the most important lines
 
 Take turns in the group, and let every member talk about the code for 30 seconds (or less/more, could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore.
-[Save the last word for me protocol](https://lead.nwp.org/knowledgebase/save-the-last-word-for-me-protocol/)
 
 #### Summarize in less than 10 sentences individually (10 mins)
 1. Independently write down the essence of the code in a few sentences
