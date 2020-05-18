@@ -1,0 +1,114 @@
+     1	module Main exposing (main)
+     2	
+     3	import Browser
+     4	import DoubleSlider as DoubleSlider exposing (..)
+     5	import Html exposing (Html, button, div, text)
+     6	import Html.Events exposing (onClick)
+     7	import RangeSlider as RangeSlider exposing (..)
+     8	import SingleSlider exposing (..)
+     9	
+    10	
+    11	main : Program Flags Model Msg
+    12	main =
+    13	    Browser.element { init = init, update = update, view = view, subscriptions = subscriptions }
+    14	
+    15	
+    16	
+    17	-- MODEL
+    18	
+    19	
+    20	type alias Model =
+    21	    { singleSlider : SingleSlider.SingleSlider Msg
+    22	    , doubleSlider : DoubleSlider.DoubleSlider Msg
+    23	    }
+    24	
+    25	
+    26	type alias Flags =
+    27	    {}
+    28	
+    29	
+    30	init : Flags -> ( Model, Cmd Msg )
+    31	init flags =
+    32	    let
+    33	        minFormatter =
+    34	            \value -> String.fromFloat value
+    35	
+    36	        model =
+    37	            { singleSlider =
+    38	                SingleSlider.init
+    39	                    { min = 0
+    40	                    , max = 1000
+    41	                    , value = 500
+    42	                    , step = 50
+    43	                    , onChange = SingleSliderChange
+    44	                    }
+    45	                    |> SingleSlider.withMinFormatter minFormatter
+    46	            , doubleSlider =
+    47	                DoubleSlider.init
+    48	                    { min = 0
+    49	                    , max = 1000
+    50	                    , lowValue = 500
+    51	                    , highValue = 750
+    52	                    , step = 50
+    53	                    , onLowChange = DoubleSliderLowChange
+    54	                    , onHighChange = DoubleSliderHighChange
+    55	                    }
+    56	            }
+    57	    in
+    58	    ( model, Cmd.none )
+    59	
+    60	
+    61	
+    62	-- UPDATE
+    63	
+    64	
+    65	type Msg
+    66	    = NoOp
+    67	    | DoubleSliderLowChange Float
+    68	    | DoubleSliderHighChange Float
+    69	    | SingleSliderChange Float
+    70	
+    71	
+    72	update : Msg -> Model -> ( Model, Cmd Msg )
+    73	update msg model =
+    74	    case msg of
+    75	        NoOp ->
+    76	            ( model, Cmd.none )
+    77	
+    78	        DoubleSliderLowChange str ->
+    79	            let
+    80	                newSlider =
+    81	                    DoubleSlider.updateLowValue str model.doubleSlider
+    82	            in
+    83	            ( { model | doubleSlider = newSlider }, Cmd.none )
+    84	
+    85	        DoubleSliderHighChange str ->
+    86	            let
+    87	                newSlider =
+    88	                    DoubleSlider.updateHighValue str model.doubleSlider
+    89	            in
+    90	            ( { model | doubleSlider = newSlider }, Cmd.none )
+    91	
+    92	        SingleSliderChange str ->
+    93	            let
+    94	                newSlider =
+    95	                    SingleSlider.update str model.singleSlider
+    96	            in
+    97	            ( { model | singleSlider = newSlider }, Cmd.none )
+    98	
+    99	
+   100	
+   101	-- VIEW
+   102	
+   103	
+   104	view : Model -> Html Msg
+   105	view model =
+   106	    div []
+   107	        [ div [] [ DoubleSlider.view model.doubleSlider ]
+   108	        , div [] [ SingleSlider.view model.singleSlider ]
+   109	        ]
+   110	
+   111	
+   112	subscriptions : Model -> Sub msg
+   113	subscriptions model =
+   114	    Sub.none
