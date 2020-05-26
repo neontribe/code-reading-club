@@ -20,7 +20,7 @@ Look at the code at a glance, really not more than 1 minute. Then try to answer 
 
 - Are these two things (variables, classes, programming concepts) related?
 
-#### Discuss the results (10 mins)
+#### Discuss the results (5 mins)
 
 Discuss the results as a group. What lines of facts or concepts were chosen by everyone versus by only a few people?
 
@@ -56,7 +56,7 @@ Instantiation
 
 Go through the code mechanically and create a list of all identifier names in the snippet. Of you have done the "examine structure" exercise before, this should be relatively quick and easy.
 
-#### Discussion (10 mins)
+#### Discussion (5 mins)
 
 Discuss in the group:
 
@@ -64,7 +64,7 @@ Discuss in the group:
 - Which names are related to each other, from the names only?
 - Are there names that are ambiguous when looked at without context?
 
-### Identify most important lines (10 mins)
+### Identify most important lines (5 mins)
 Independently identify the 5 lines you consider most important.
 
 #### Discussion (10 mins)
@@ -77,7 +77,7 @@ Discuss in the group:
 
 Take turns in the group, and let every member talk about the code for 30 seconds (or less/more, could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore.
 
-#### Summarize in less than 10 sentences individually (10 mins)
+#### Summarize in less than 10 sentences individually (5 mins)
 
 1. Independently write down the essence of the code in a few sentences
 
@@ -86,7 +86,7 @@ Take turns in the group, and let every member talk about the code for 30 seconds
 - topics covered by many vs few
 - strategies used to create the summary (e.g. method names, documentation, variable names, prior knowledge of system)
 
-#### Summarize in less than 10 sentences (10 mins)
+#### Summarize in less than 10 sentences (5 mins)
 
 1. Create a summary together
 1. Compare the summary with the available documentation (inside and outside the code)
