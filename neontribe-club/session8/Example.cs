@@ -1,5 +1,3 @@
-// Source: https://gitlab.redox-os.org/redox-os/kernel/-/blob/30b109d2880bf02fa35d7f623b2961e188b1e902/src/memory/bump.rs
-
 //! # Bump frame allocator
 //! Some code was borrowed from [Phil Opp's Blog](http://os.phil-opp.com/allocating-frames.html)
 
